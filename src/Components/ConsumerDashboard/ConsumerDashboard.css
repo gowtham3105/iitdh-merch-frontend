@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yeseva+One&display=swap');
+
+.center-card-div {
+    height: 80vh;
+    background: white;
+    width: 35vw;
+    position: relative;
+    left: 32.5vw;
+    top: 10vh;
+    /*top: calc(50vh - 225px);*/
+    -webkit-box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+    -moz-box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+    box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+    border-radius: 15px;
+    background-color: #f1f1f1;
+
+    min-width: 0px;
+    max-width: 600px;
+
+    min-height: 300px;
+    max-height: 450px;
+}
+.center-card-div-screen1{
+        max-height: 650px!important;
+     height: 92vh!important;
+         /*top: calc(50vh - 300px)!important;*/
+         top:4vh!important;
+     min-width: 0px;
+    max-width: 600px;
+
+    min-height: 550px;
+
+}
+
+.heading {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #191919;
+    text-align: center;
+    padding: 10vh 2vw;
+    font-family: 'Yeseva One', cursive;
+}
+
+.consumer-dashboard-input {
+    /*border: solid 2px #2c3e50;*/
+    border-radius: 25px;
+    padding: 10px;
+    background-color: #dbab8780;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    /*font-family: 'Poppins', sans-serif;*/
+
+
+}
+
+.consumer-dashboard-input:hover {
+    box-shadow: rgba(0, 0, 0, 0.29) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.head-input-field {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #191919;
+    text-align: center;
+    padding: 1vh 1vw;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-consumer {
+    margin: 20px 10px !important;
+    border: solid !important;
+    border-radius: 10px !important;
+    padding: 5px 15px !important;
+    color: #687a61 !important;
+    border-color: #687a61 !important;
+    font-size: 0.9rem !important;
+    font-family: 'Poppins', sans-serif!important;
+}
+
+.btn-consumer:hover {
+    margin: 20px 10px !important;
+    border: solid !important;
+    border-radius: 10px !important;
+    padding: 5px 15px !important;
+    border-color: #687a61 !important;
+    color: white !important;
+    background-color: #687a61 !important;
+    font-family: 'Poppins', sans-serif!important;
+    font-size: 0.9rem !important;
+}
+
+.heading-screen1{
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: #191919;
+    text-align: center;
+    padding: 3vh 2vw;
+    font-family: 'Yeseva One', cursive;
+}
+.consumer-screen1-topfields{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #191919;
+    text-align: left;
+    padding: 1vh 1vw;
+    font-family: 'Poppins', sans-serif;
+    line-height: 0.8;
+}
+.consumer-topfields-key{
+    display: inline-block;
+    padding: 10px 10px;
+    font-weight: 600;
+}
+.consumer-screen1-product-parent{
+
+}
+.consumer-screen1-product-key{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #191919;
+    padding: 1vh 1vw 2vh 1vw;
+    font-family: 'Poppins', sans-serif;
+    line-height: 0.8;
+}
+
+@media only screen and  (max-width: 460px) {
+    .center-card-div {
+        height: 80vh;
+        background: white;
+        width: 85vw;
+        position: relative;
+        left: 7.5vw;
+        -webkit-box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        -moz-box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        border-radius: 15px;
+        background-color: #f1f1f1;
+
+
+    }
+
+    .heading {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #191919;
+        text-align: center;
+        padding: 6vh 2vw;
+        /*font-family: 'Poppins', sans-serif;*/
+        font-family: 'Yeseva One', cursive;
+    }
+
+    .head-input-field {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #191919;
+        text-align: center;
+        padding: 1vh 1vw;
+        font-family: 'Poppins', sans-serif;
+        /*font-family: 'Yeseva One', cursive;*/
+    }
+
+    .consumer-dashboard-input {
+        /*border: solid 2px #2c3e50;*/
+        width: 70%;
+        border-radius: 25px;
+        padding: 5px;
+        background-color: #dbab8780;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        /*font-family: 'Poppins', sans-serif;*/
+
+
+    }
+}
+
+@media only screen and (max-width: 1142px) and (min-width: 460px) {
+    .center-card-div {
+        height: 80vh;
+        background: white;
+        width: 35vw;
+        position: relative;
+        left: calc(50vw - 200px);
+        -webkit-box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        -moz-box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        border-radius: 15px;
+        background-color: #f1f1f1;
+        min-width: 400px;
+        max-width: 600px;
+
+    }
+}
+
+
+@media only screen and (min-width: 1714px) {
+    .center-card-div {
+        height: 80vh;
+        background: white;
+        width: 35vw;
+        position: relative;
+        left: calc(50vw - 300px);
+        -webkit-box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        -moz-box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        border-radius: 15px;
+        background-color: #f1f1f1;
+        min-width: 400px;
+        max-width: 600px;
+
+
+    }
+}
+
+@media only screen and (max-height: 350px) {
+    .center-card-div {
+        height: 92vh;
+        background: white;
+        position: relative;
+        top: 10vh;
+        -webkit-box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        -moz-box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        border-radius: 15px;
+        background-color: #f1f1f1;
+
+
+    }
+    .center-card-div-screen1{
+        max-height: 600px!important;
+
+}
+}
+
+@media only screen and (max-height: 500px) {
+    .center-card-div {
+        height: 92vh;
+        background: white;
+        position: relative;
+        top: calc(50vh - 150px);
+        -webkit-box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        -moz-box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        border-radius: 15px;
+        background-color: #f1f1f1;
+
+    }
+    .center-card-div-screen1{
+         top: calc(50vh - 150px)!important;
+        max-height: 600px!important;
+
+    }
+
+    .heading {
+        font-size: 2rem;
+        font-weight: 500;
+        color: #191919;
+        text-align: center;
+        padding: 10vh 2vw;
+        /*font-family: 'Poppins', sans-serif;*/
+        font-family: 'Yeseva One', cursive;
+    }
+}
+
+@media only screen and (min-height: 562px) {
+    .center-card-div {
+        height: 80vh;
+        background: white;
+        position: relative;
+        top: calc(50vh - 225px);
+        -webkit-box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        -moz-box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        box-shadow: 5px 5px 23px -5px rgb(0 0 0 / 85%);
+        border-radius: 15px;
+        background-color: #f1f1f1;
+
+    }
+     .center-card-div-screen1{
+         height: 92vh!important;
+         top:4vh;
+        max-height: 650px!important;
+
+    }
+
+    .heading {
+        font-weight: 500;
+        color: #191919;
+        text-align: center;
+        padding: 6vh 2vw;
+        font-family: 'Yeseva One', cursive;
+    }
+}
+
+@media only screen and (min-height: 750px) {
+
+     .center-card-div-screen1{
+         top: calc(50vh - 325px)!important;
+        max-height: 650px!important;
+
+    }
+
+
+}
+@media only screen and (max-height: 600px) {
+
+     .center-card-div-screen1{
+         overflow: auto;
+
+    }
+
+
+}
+
+
+
