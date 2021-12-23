@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React, {useEffect,useState} from "react";
+import FadeIn from 'react-fade-in';
+import {
+  BrowserRouter as Router,
+ Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import ConsumerDashboard from "./Components/ConsumerDashboard/ConsumerDashboard";
 import './App.css';
 
-function App() {
+const App = () => {
+
+    const [loadingCompleted, setLoadingCompleted] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='parent-div'>
+        <Router>
+          <FadeIn delay={500} transitionDuration={1000} onComplete={() =>{setLoadingCompleted(true)}}>
+            <Routes>
+              <Route path="/" element={<ConsumerDashboard loadingCompleted={loadingCompleted} />} />
+            </Routes>
+          </FadeIn>
+        </Router>
+      </div>
+
     </div>
   );
 }
