@@ -18,8 +18,7 @@
       "sizes": "512x512"
     }
   ],
-   "homepage": "https://gowtham3105.github.io/iitdh-merch",
-  "start_url": "https://gowtham3105.github.io/iitdh-merch",
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
