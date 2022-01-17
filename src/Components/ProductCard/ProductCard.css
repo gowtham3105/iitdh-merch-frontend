@@ -15,6 +15,12 @@
 
 }
 
+.product-card-address{
+    margin-bottom: 0px;
+    font-size: 0.9rem;
+    transform: scale(0.9);
+}
+
 .product-card-image {
     width: 30px;
     padding: 5px;
@@ -43,25 +49,27 @@
 
 .product-card__info_red {
 
-background: rgb(147,79,89);
-background: linear-gradient(45deg, rgba(147,79,89,1) 19%, rgba(128,44,56,1) 47%, rgba(104,23,35,1) 72%);
+    background: rgb(147, 79, 89);
+    background: linear-gradient(45deg, rgba(147, 79, 89, 1) 19%, rgba(128, 44, 56, 1) 47%, rgba(104, 23, 35, 1) 72%);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 
 }
 
-.product-card__info_white{
-background: rgb(75,75,75);
-background: linear-gradient(45deg, rgba(75,75,75,1) 3%, rgba(230,230,230,1) 47%, rgba(94,94,94,1) 90%);
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    color:#191919;
+.product-card__info_white {
+    background: rgb(75, 75, 75);
+    background: linear-gradient(45deg, rgba(75, 75, 75, 1) 3%, rgba(230, 230, 230, 1) 47%, rgba(94, 94, 94, 1) 90%);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    color: #191919;
 
 }
-.product-card__info_hood{
-background: rgb(179,179,179);
-background: linear-gradient(135deg, rgba(179,179,179,1) 0%, rgba(80,80,80,1) 17%, rgba(33,33,33,1) 38%, rgba(27,27,27,1) 82%);
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+.product-card__info_hood {
+    background: rgb(179, 179, 179);
+    background: linear-gradient(135deg, rgba(179, 179, 179, 1) 0%, rgba(80, 80, 80, 1) 17%, rgba(33, 33, 33, 1) 38%, rgba(27, 27, 27, 1) 82%);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 
 }
+
 .product-card__id {
     text-align: left;
     width: fit-content;
@@ -101,7 +109,7 @@ background: linear-gradient(135deg, rgba(179,179,179,1) 0%, rgba(80,80,80,1) 17%
 }
 
 .product-card-col2 {
-width: 40px;
+    width: 40px;
 }
 
 .product-card__id__id {

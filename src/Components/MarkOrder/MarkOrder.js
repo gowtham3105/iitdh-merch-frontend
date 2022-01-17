@@ -2,16 +2,18 @@ import React, {useEffect, useState} from 'react';
 import {Button, Input} from '@material-ui/core';
 import {Fade} from 'react-reveal';
 import ProductCard from './../ProductCard/ProductCard';
+import MarkOrderAPI from './../../api/MarkOrder';
 import GetOrder from './../../api/GetOrderConsumer';
 import Snackbar from "@material-ui/core/Snackbar";
 import {Alert} from '@mui/material';
 import QrCode2Icon from '@mui/icons-material/QrCode2';
-import QRModal from './../QRModal/QRModal';
+import Swal from "sweetalert2";
+import {useParams, useNavigate} from "react-router-dom";
 
-import './ConsumerDashboard.css';
+import './MarkOrder.css';
 
 // create component react
-const ConsumerDashboard = (props) => {
+const MarkOrder = (props) => {
     const [paymentId, setPaymentId] = useState('');
     const [screen, setScreen] = useState(0);
     const [products, setProducts] = useState([]);
@@ -25,7 +27,10 @@ const ConsumerDashboard = (props) => {
 
     const [showQRModal, setShowQRModal] = useState(false);
 
+    let params = useParams();
+    let navigate = useNavigate();
 
+    console.log(params);
 
     useEffect(() => {
         if (screen === 1) {
@@ -87,6 +92,102 @@ const ConsumerDashboard = (props) => {
             // setPaymentId('');
         });
     };
+
+    const markorder = async () => {
+        if (paymentId === '') {
+            setErrorInput(true);
+            raiseError('Please enter your payment id');
+        } else {
+            setErrorInput(false);
+            var pass = "";
+            pass = sessionStorage.getItem('password')
+            console.log(pass, "this is here");
+            if (!pass || pass === "") {
+                const passInput = await Swal.fire({
+                    title: 'Password',
+                    input: 'password',
+                    inputLabel: 'Enter your Password',
+                    inputPlaceholder: 'Password',
+                    inputValidator: (value) => {
+                        if (!value) {
+                            return 'You need to write something!'
+                        }
+                    }
+                })
+                console.log(passInput, "this is here");
+
+                if (passInput.isConfirmed) {
+                    pass = passInput.value;
+                    sessionStorage.setItem('password', pass);
+                }else{
+                    return;
+                }
+            }
+            console.log(pass, "password is here");
+            MarkOrderAPI(paymentId, pass).then( async res => {
+                console.log(res, "dff");
+                setShowAnimation(true);
+                if(res.should_deliver){
+                    await Swal.fire({
+                        title: 'Order Delivered',
+                        text: 'This Order can be collected',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    })
+                }else{
+                    await Swal.fire({
+                        title: 'Order Delivered',
+                        text: 'This Order is already collected',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    })
+                }
+
+                window.location.replace("/markOrder");
+
+            }).catch(err => {
+                raiseError('Password is incorrect!, Please try again');
+                sessionStorage.removeItem('password');
+            });
+        }
+    };
+    useEffect(
+        () => {
+            if (params.id) {
+                if (paymentId !== params.id) {
+                    setPaymentId(params.id);
+                            setScreen(2);
+
+                    GetOrder(params.id).then(res => {
+                        console.log(res);
+                        if (res.data.length > 0) {
+
+                            setProducts(res.data);
+                            setEmail(res.email);
+                            setAddress(res.address);
+
+                            setShowAnimation(true);
+                            setScreen(1);
+                        } else {
+                            console.log('ffgbf');
+                            // setErrorInput(true);
+                            raiseError('Order Not Found. Please check your payment id');
+                            setPaymentId('');
+                        }
+                    }).catch(err => {
+                        // setErrorInput(true);
+                        console.log(err);
+
+                        raiseError('Order Not Found. Please check your payment id');
+                        // setPaymentId('');
+                    });
+                }
+            }
+        },
+        [paymentId, params.id]
+    );
+
+
     if (screen === 0) {
         return (
             <div>
@@ -142,17 +243,24 @@ const ConsumerDashboard = (props) => {
                 </div>
             </div>
         );
-    } else if(screen == 1) {
+    } else if (screen == 1) {
         return (
+            <div>
+                <Snackbar
+                    open={showErrorMsg}
+                    autoHideDuration={5000}
+                    onClose={hideErrorMsg}
+                >
+                    <Alert severity="error" onClose={hideErrorMsg}>{errorMsg}</Alert>
+                </Snackbar>
+
             <div className='center-card-div center-card-div-screen1'>
 
                 <div className='heading-screen1'>
                     <div className='heading-screen1-title'>
                         Order Details
                     </div>
-                    <div className='heading-screen1-qr'>
-                        <QrCode2Icon style={{fontSize: '2rem'}} className='heading-screen1-qr-item' onClick={handleOpenQRModal}/>
-                    </div>
+
                 </div>
                 <Fade when={showAnimation} delay={200} distance='10%'>
                     <div
@@ -188,37 +296,33 @@ const ConsumerDashboard = (props) => {
 
                     </div>
 
+                    <div>
+                        <Button className='btn-consumer' onClick={() => {
+                            setScreen(0);
+                            setShowAnimation(false)
+                        }}>
+                            Back
+                        </Button>
+                        <Button className='btn-consumer' onClick={markorder}>
+                            Confirm
+                        </Button>
+                    </div>
 
-                    <Button className='btn-consumer' onClick={() => {
-                        setScreen(0);
-                        setShowAnimation(false)
-                    }}>
-                        Back
-                    </Button>
                 </Fade>
             </div>
-        );
-    }  else{
+         </div>
+                );
+    } else if (screen == 2) {
         return (
             <div>
 
-                <Snackbar
-                    open={showErrorMsg}
-                    autoHideDuration={5000}
-                    onClose={hideErrorMsg}
-                >
-                    <Alert severity="error" onClose={hideErrorMsg}>{errorMsg}</Alert>
-                </Snackbar>
 
-                <div className='center-card-div'>
-                   <QRModal handleClose={handleCloseQRModal} paymentId = {paymentId}/>
-                    
-                </div>
             </div>
+
         );
     }
 
 }
 
 // export component
-export default ConsumerDashboard;
+export default MarkOrder;

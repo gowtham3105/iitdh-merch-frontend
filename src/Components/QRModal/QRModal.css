@@ -1,0 +1,35 @@
+.btn-consumer {
+    margin: 20px 10px !important;
+    border: solid !important;
+    border-radius: 10px !important;
+    padding: 5px 15px !important;
+    color: #687a61 !important;
+    border-color: #687a61 !important;
+    font-size: 0.9rem !important;
+    font-family: 'Poppins', sans-serif!important;
+}
+
+.btn-consumer:hover {
+    margin: 20px 10px !important;
+    border: solid !important;
+    border-radius: 10px !important;
+    padding: 5px 15px !important;
+    border-color: #687a61 !important;
+    color: white !important;
+    background-color: #687a61 !important;
+    font-family: 'Poppins', sans-serif!important;
+    font-size: 0.9rem !important;
+}
+.qr-code-container{
+padding: 5vh 5vw;
+
+}
+
+.qr-code-container-text-title{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #191919;
+    text-align: center;
+    padding: 1vh 1vw;
+    font-family: 'Yeseva One', cursive;
+}

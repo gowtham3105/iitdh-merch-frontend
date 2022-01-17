@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+# IITDH Merch - Frontend
+
+This repository contains the frontend of the IITDH Merch website.
+
+This website is used to check the orders placed by the customers and also to mark an order as delivered by the agent.
+This website is hosted on Heroku.
+
+Website Link: [https://iitdh-merch.herokuapp.com/](https://iitdh-merch.herokuapp.com/)
+
+Backend Repo: [https://github.com/gowtham3105/iitdh-merch-backend](https://github.com/gowtham3105/iitdh-merch-backend)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
